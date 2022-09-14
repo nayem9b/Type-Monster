@@ -38,9 +38,11 @@ const typeController = (e) => {
     return;
   }
 
-  userText += newLetter;
+   userText += newLetter;
 
   const newLetterCorrect = validate(newLetter);
+  
+  console.count(newLetterCorrect)
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
@@ -77,7 +79,7 @@ const gameOver = () => {
   // clear user text
   display.innerHTML = "";
   // make it inactive
-  display.classList.add("inactive");
+  display.classList.add("hidden");
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
