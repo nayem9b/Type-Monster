@@ -42,11 +42,13 @@ const typeController = (e) => {
 
   const newLetterCorrect = validate(newLetter);
   
-  console.count(newLetterCorrect)
+  console.count(newLetterCorrect);
+  
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
+    errorCount++;
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
   }
 
@@ -111,19 +113,18 @@ const start = () => {
 
   const startCountdown = setInterval(() => {
    
-    countdownOverlay.innerHTML = `<h1>${count}</h1>`;
+    countdownOverlay.innerHTML = `<h1>${count>=0 ? count:''}</h1>`;
     
 
   
 
     // finished timer
-    if (count === 0) {
+    if (count === -1) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
       const damn = document.getElementById("display")
       damn.classList.remove("hidden");
-      countdownOverlay.innerHTML = ``;
       clearInterval(startCountdown);
       startTime = new Date().getTime();
     }
