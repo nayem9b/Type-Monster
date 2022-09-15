@@ -1,4 +1,5 @@
 * {
+  FONT-VARIANT: JIS04;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -200,4 +201,25 @@ button {
   
     justify-content: space-around;
   }
+  #blog-button{
+    text-decoration: none;
+    background-image: linear-gradient(red,tomato);
+    font-weight: 700;
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: azure;
+    margin-top: 30px;
+    margin-left:20px;
+  }
+}
+
+#blog-button{
+  text-decoration: none;
+  background-image: linear-gradient(red,tomato);
+  font-weight: 700;
+  padding: 10px 30px;
+  border-radius: 8px;
+  color: azure;
+  margin-top: 30px;
+  margin-left:1300px;
 }
